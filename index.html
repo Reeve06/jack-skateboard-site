@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jack Skateboard | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 3D Skateboard Navigation -->
+  <div class="nav-perspective">
+    <div class="skateboard" id="skateboard-nav">
+      
+      <!-- Front (Grip Tape) -->
+      <div class="skate-face skate-front">
+        <div class="skate-truck top-truck"></div>
+        <div class="skate-content">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="map.html" class="nav-link">Spots Map</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <button class="flip-btn" onclick="flipSkateboard()">↺ Flip</button>
+        <div class="skate-truck bottom-truck"></div>
+      </div>
+
+      <!-- Back (Deck Graphic) -->
+      <div class="skate-face skate-back">
+        <div class="skate-truck top-truck">
+            <div class="wheels"></div>
+        </div>
+        <div class="skate-content deck-graphic">
+          <h2>JACK <span>SKATEBOARD</span></h2>
+          <div class="deck-links">
+            <a href="https://instagram.com" target="_blank" class="nav-link secondary-btn">Instagram</a>
+            <a href="https://youtube.com" target="_blank" class="nav-link secondary-btn">YouTube</a>
+          </div>
+        </div>
+        <button class="flip-btn" onclick="flipSkateboard()">↻ Flip</button>
+        <div class="skate-truck bottom-truck">
+            <div class="wheels"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <header id="hero" class="section">
+    <div class="hero-bg-animated"></div>
+    <div class="container hero-content">
+      <h1 class="glitch" data-text="JACK SKATEBOARD">JACK <span>SKATEBOARD</span></h1>
+      <p>The ultimate community for finding, sharing, and shredding the best skate spots.</p>
+      <a href="map.html" class="btn-primary hero-btn">Explore Spots</a>
+    </div>
+  </header>
+
+  <script src="script.js"></script>
+</body>
+</html>
