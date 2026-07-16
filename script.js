@@ -2,7 +2,18 @@
 let currentRotation = 0;
 window.flipSkateboard = function() {
     currentRotation += 180;
-    document.getElementById('skateboard-nav').style.transform = `rotateX(${currentRotation}deg)`;
+    const board = document.getElementById('skateboard-nav');
+    if (board) {
+        board.style.transform = `rotateX(${currentRotation}deg)`;
+        
+        // Toggle the flipped class based on rotation state
+        const isFlipped = (currentRotation / 180) % 2 === 1;
+        if (isFlipped) {
+            board.classList.add('flipped');
+        } else {
+            board.classList.remove('flipped');
+        }
+    }
 }
 
 // --- FIREBASE MOCK (Awaiting User Config) ---

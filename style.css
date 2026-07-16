@@ -172,7 +172,6 @@ a {
   transform-style: preserve-3d;
   transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.skateboard.flipped { transform: rotateX(180deg); }
 
 .skate-face {
   position: absolute;
@@ -202,8 +201,27 @@ a {
   pointer-events: none;
   z-index: 1;
 }
-.skateboard.flipped .skate-front { pointer-events: none; z-index: 1; visibility: hidden; }
-.skateboard.flipped .skate-back { pointer-events: auto; z-index: 2; }
+.skateboard.flipped .skate-front { 
+  pointer-events: none; 
+  z-index: 1; 
+  visibility: hidden;
+  transition: visibility 0s 0.8s;
+}
+.skateboard:not(.flipped) .skate-front {
+  visibility: visible;
+  transition: visibility 0s 0s;
+}
+
+.skateboard.flipped .skate-back { 
+  pointer-events: auto; 
+  z-index: 2; 
+  visibility: visible;
+  transition: visibility 0s 0s;
+}
+.skateboard:not(.flipped) .skate-back {
+  visibility: hidden;
+  transition: visibility 0s 0.8s;
+}
 
 .skate-truck {
   width: 30px; height: 40px; background: #444; border-radius: 4px;
@@ -211,15 +229,17 @@ a {
 }
 .skate-front .skate-truck {
   height: 10px; width: 10px; border-radius: 50%; background: #666; box-shadow: 0 40px 0 #666;
+  transform: none;
+  z-index: 10;
 }
-.skate-front .top-truck { left: 50px; top: 20px; }
-.skate-front .bottom-truck { right: 50px; top: 20px; }
+.skate-front .top-truck { left: 150px; top: 20px; }
+.skate-front .bottom-truck { right: 150px; top: 20px; }
 
 .skate-back .skate-truck {
   background: #888; border: 2px solid #555; display: flex; justify-content: center; align-items: center;
 }
-.skate-back .top-truck { left: 50px; }
-.skate-back .bottom-truck { right: 50px; }
+.skate-back .top-truck { left: 150px; }
+.skate-back .bottom-truck { right: 150px; }
 
 .wheels { width: 4px; height: 50px; background: #222; position: relative; }
 .wheels::before, .wheels::after {
@@ -230,9 +250,11 @@ a {
 
 .skate-content {
   display: flex; gap: 40px; align-items: center; justify-content: center; flex: 1; z-index: 10;
+  padding: 0 180px;
 }
 .nav-link {
   color: var(--text-muted); font-weight: 600; font-size: 18px; transition: color 0.3s;
+  text-decoration: none; position: relative; padding: 5px 10px;
 }
 .nav-link:hover, .nav-link.active { color: #fff; }
 .nav-link.active { color: var(--accent); text-shadow: 0 0 10px var(--accent-glow); }
@@ -240,7 +262,17 @@ a {
 .deck-graphic { font-family: var(--font-heading); letter-spacing: 2px; justify-content: space-around; }
 .deck-graphic h2 { font-size: 28px; font-weight: 900; margin: 0; color: #fff; }
 .deck-graphic span { color: var(--color-street); }
-.deck-links { display: flex; gap: 20px; }
+.deck-links { display: flex; gap: 20px; align-items: center; z-index: 50; position: relative; }
+
+.brand-link {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 22px !important;
+}
+.brand-link span {
+  color: var(--color-street);
+}
 
 .flip-btn {
   background: transparent; border: none; color: var(--text-muted); cursor: pointer;
@@ -292,9 +324,9 @@ a {
   display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-start; max-width: 70%;
 }
 .filter-btn {
-  background: var(--panel-bg); backdrop-filter: blur(8px);
-  border: 1px solid var(--panel-border); color: #fff;
-  padding: 8px 16px; border-radius: 20px; font-weight: 600; cursor: pointer; transition: all 0.3s;
+  background: transparent; border: 2px solid var(--accent); color: var(--accent);
+  padding: 8px 16px; border-radius: 20px; cursor: pointer; font-weight: bold;
+  transition: all 0.3s;
 }
 .filter-btn:hover { background: rgba(255,255,255,0.1); }
 .filter-btn.active { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 15px var(--accent-glow); }
@@ -372,7 +404,7 @@ a {
   .content-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 2.5rem; }
   .nav-perspective { width: 95vw; top: 15px; height: 60px; }
-  .skate-content { gap: 15px; }
+  .skate-content { gap: 15px; padding: 0 30px; }
   .nav-link { font-size: 12px; }
   .deck-graphic h2 { font-size: 16px; }
   .flip-btn { padding: 5px; font-size: 12px; }
@@ -389,11 +421,11 @@ a {
 @media (max-width: 480px) {
   .hero-content h1 { font-size: 12vw; }
   .nav-perspective { height: 55px; }
+  .skate-content { gap: 8px; padding: 0 15px; }
   .nav-link { font-size: 10px; }
   .flip-btn { font-size: 10px; }
   .deck-graphic h2 { font-size: 14px; letter-spacing: 0; }
   .deck-links { gap: 5px; }
-  .deck-links a { font-size: 10px; }
   .skate-front .top-truck { left: 5px; }
   .skate-front .bottom-truck { right: 5px; }
   .skate-back .top-truck { left: 10px; }
