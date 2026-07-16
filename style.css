@@ -193,15 +193,17 @@ a {
   background-size: 4px 4px;
   border: 3px solid #0a0a0a;
   pointer-events: auto;
+  z-index: 2;
 }
 .skate-back {
   background: linear-gradient(135deg, #111, #222);
   border: 3px solid #555;
   transform: rotateX(180deg);
   pointer-events: none;
+  z-index: 1;
 }
-.skateboard.flipped .skate-front { pointer-events: none; }
-.skateboard.flipped .skate-back { pointer-events: auto; }
+.skateboard.flipped .skate-front { pointer-events: none; z-index: 1; visibility: hidden; }
+.skateboard.flipped .skate-back { pointer-events: auto; z-index: 2; }
 
 .skate-truck {
   width: 30px; height: 40px; background: #444; border-radius: 4px;
