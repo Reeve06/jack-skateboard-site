@@ -263,6 +263,16 @@ a {
 .deck-graphic h2 { font-size: 28px; font-weight: 900; margin: 0; color: #fff; }
 .deck-graphic span { color: var(--color-street); }
 .deck-links { display: flex; gap: 20px; align-items: center; z-index: 50; position: relative; }
+.social-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.3s;
+}
+.nav-link:hover .social-icon {
+  transform: scale(1.15);
+}
 
 .brand-link {
   font-family: var(--font-heading);
@@ -406,16 +416,17 @@ a {
   .content-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 2.5rem; }
   .nav-perspective { width: 95vw; top: 15px; height: 60px; }
+  .skate-face { padding: 0 45px; }
   .skate-content { gap: 15px; padding: 0 40px; }
   .nav-link { font-size: 12px; }
   .brand-link { font-size: 16px !important; }
   .deck-links { gap: 10px; }
   .flip-btn { padding: 5px; font-size: 12px; }
   .skate-front .skate-truck { box-shadow: 0 30px 0 #666; }
-  .skate-front .top-truck { left: 15px; top: 10px; }
-  .skate-front .bottom-truck { right: 15px; top: 10px; }
-  .skate-back .top-truck { left: 20px; }
-  .skate-back .bottom-truck { right: 20px; }
+  .skate-front .top-truck { left: 90px; top: 10px; }
+  .skate-front .bottom-truck { right: 90px; top: 10px; }
+  .skate-back .top-truck { left: 90px; }
+  .skate-back .bottom-truck { right: 90px; }
   .map-wrapper { height: 500px; }
   .map-filters { bottom: 20px; left: 10px; max-width: calc(100% - 60px); }
   .filter-btn { padding: 6px 12px; font-size: 12px; }
@@ -425,14 +436,15 @@ a {
 @media (max-width: 480px) {
   .hero-content h1 { font-size: 12vw; }
   .nav-perspective { height: 55px; }
+  .skate-face { padding: 0 30px; }
   .skate-content { gap: 8px; padding: 0 20px; }
   .nav-link { font-size: 10px; }
   .brand-link { font-size: 13px !important; letter-spacing: 1px; }
   .flip-btn { font-size: 10px; }
   .deck-links { gap: 6px; }
   .skate-front .skate-truck { box-shadow: 0 25px 0 #666; }
-  .skate-front .top-truck { left: 5px; top: 10px; }
-  .skate-front .bottom-truck { right: 5px; top: 10px; }
-  .skate-back .top-truck { left: 10px; }
-  .skate-back .bottom-truck { right: 10px; }
+  .skate-front .top-truck { left: 60px; top: 10px; }
+  .skate-front .bottom-truck { right: 60px; top: 10px; }
+  .skate-back .top-truck { left: 60px; }
+  .skate-back .bottom-truck { right: 60px; }
 }
