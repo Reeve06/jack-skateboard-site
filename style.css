@@ -406,12 +406,14 @@ a {
   .content-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 2.5rem; }
   .nav-perspective { width: 95vw; top: 15px; height: 60px; }
-  .skate-content { gap: 15px; padding: 0 30px; }
+  .skate-content { gap: 15px; padding: 0 40px; }
   .nav-link { font-size: 12px; }
-  .deck-graphic h2 { font-size: 16px; }
+  .brand-link { font-size: 16px !important; }
+  .deck-links { gap: 10px; }
   .flip-btn { padding: 5px; font-size: 12px; }
-  .skate-front .top-truck { left: 15px; }
-  .skate-front .bottom-truck { right: 15px; }
+  .skate-front .skate-truck { box-shadow: 0 30px 0 #666; }
+  .skate-front .top-truck { left: 15px; top: 10px; }
+  .skate-front .bottom-truck { right: 15px; top: 10px; }
   .skate-back .top-truck { left: 20px; }
   .skate-back .bottom-truck { right: 20px; }
   .map-wrapper { height: 500px; }
@@ -423,13 +425,14 @@ a {
 @media (max-width: 480px) {
   .hero-content h1 { font-size: 12vw; }
   .nav-perspective { height: 55px; }
-  .skate-content { gap: 8px; padding: 0 15px; }
+  .skate-content { gap: 8px; padding: 0 20px; }
   .nav-link { font-size: 10px; }
+  .brand-link { font-size: 13px !important; letter-spacing: 1px; }
   .flip-btn { font-size: 10px; }
-  .deck-graphic h2 { font-size: 14px; letter-spacing: 0; }
-  .deck-links { gap: 5px; }
-  .skate-front .top-truck { left: 5px; }
-  .skate-front .bottom-truck { right: 5px; }
+  .deck-links { gap: 6px; }
+  .skate-front .skate-truck { box-shadow: 0 25px 0 #666; }
+  .skate-front .top-truck { left: 5px; top: 10px; }
+  .skate-front .bottom-truck { right: 5px; top: 10px; }
   .skate-back .top-truck { left: 10px; }
   .skate-back .bottom-truck { right: 10px; }
 }
