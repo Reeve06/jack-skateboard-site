@@ -325,7 +325,7 @@ a {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-content h1 { font-size: 3.5rem; }
+  .hero-content h1 { font-size: 10vw; }
   .about-grid { grid-template-columns: 1fr; }
   .nav-perspective { width: 95vw; top: 15px; height: 60px; }
   .skate-content { gap: 8px; }
@@ -343,10 +343,15 @@ a {
 }
 
 @media (max-width: 480px) {
-  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content h1 { font-size: 12vw; }
   .nav-perspective { height: 55px; }
   .nav-link { font-size: 10px; }
   .flip-btn { font-size: 10px; }
+  .deck-graphic h2 { font-size: 14px; letter-spacing: 0; }
+  .deck-links { gap: 5px; }
+  .deck-links a { font-size: 10px; }
   .skate-front .top-truck { left: 5px; }
   .skate-front .bottom-truck { right: 5px; }
+  .skate-back .top-truck { left: 10px; }
+  .skate-back .bottom-truck { right: 10px; }
 }
