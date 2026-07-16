@@ -21,7 +21,7 @@ const firebaseConfig = {
 // --- LEAFLET MAP (Only runs on map.html) ---
 if (document.getElementById('map')) {
   const map = L.map('map', { zoomControl: false }).setView([55.9533, -3.1883], 12);
-  L.control.zoom({ position: 'topright' }).addTo(map);
+  L.control.zoom({ position: 'bottomright' }).addTo(map);
 
   L.Control.geocoder({
     defaultMarkGeocode: false,
