@@ -23,6 +23,15 @@ if (document.getElementById('map')) {
   const map = L.map('map', { zoomControl: false }).setView([55.9533, -3.1883], 12);
   L.control.zoom({ position: 'topright' }).addTo(map);
 
+  L.Control.geocoder({
+    defaultMarkGeocode: false,
+    position: 'topleft'
+  })
+  .on('markgeocode', function(e) {
+    map.fitBounds(e.geocode.bbox);
+  })
+  .addTo(map);
+
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 19
   }).addTo(map);
