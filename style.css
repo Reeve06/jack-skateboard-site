@@ -29,6 +29,30 @@ body {
   font-family: var(--font-body);
   color: var(--text-main);
   overflow-x: hidden;
+  cursor: url('t-tool.svg') 16 16, auto;
+}
+
+a, button, select, input {
+  cursor: url('t-tool.svg') 16 16, pointer;
+}
+
+/* --- CUSTOM SCROLLBAR --- */
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background-color: #222;
+  border-left: 2px solid #111;
+  background-image: linear-gradient(90deg, transparent 48%, rgba(255,255,255,0.15) 48%, rgba(255,255,255,0.15) 52%, transparent 52%);
+}
+::-webkit-scrollbar-thumb {
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 40'%3E%3Crect x='3' y='2' width='10' height='36' rx='5' fill='%23FF007A'/%3E%3Crect x='1' y='6' width='14' height='4' rx='2' fill='%23111'/%3E%3Crect x='1' y='30' width='14' height='4' rx='2' fill='%23111'/%3E%3C/svg%3E") center center no-repeat;
+  background-size: 16px 40px;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 40'%3E%3Crect x='3' y='2' width='10' height='36' rx='5' fill='%2300F0FF'/%3E%3Crect x='1' y='6' width='14' height='4' rx='2' fill='%23111'/%3E%3Crect x='1' y='30' width='14' height='4' rx='2' fill='%23111'/%3E%3C/svg%3E") center center no-repeat;
+  background-size: 16px 40px;
 }
 
 h1, h2, h3, h4, h5, h6 {
