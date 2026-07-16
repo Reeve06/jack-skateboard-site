@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jack Skateboard | About</title>
+  <title>Jack Skateboard | About & Contact</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
           <a href="index.html" class="nav-link">Home</a>
           <a href="map.html" class="nav-link">Spots Map</a>
           <a href="about.html" class="nav-link active">About</a>
-          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="about.html#contact" class="nav-link">Contact</a>
         </div>
         <button class="flip-btn" onclick="flipSkateboard()">↺ Flip</button>
         <div class="skate-truck bottom-truck"></div>
@@ -74,6 +74,28 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <h2>HIT US <span>UP</span></h2>
+      <form class="glass-panel contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+        <div class="input-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Tony Hawk" required />
+        </div>
+        <div class="input-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="tony@birdhouse.com" required />
+        </div>
+        <div class="input-group">
+          <label>Message</label>
+          <textarea placeholder="Yo, love the site..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary w-full">Send Message</button>
+      </form>
     </div>
   </section>
 
